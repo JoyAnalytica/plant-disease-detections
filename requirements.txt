@@ -1,6 +1,5 @@
-
 streamlit
-tensorflow-cpu==2.16.1
-numpy<2
-Pillow
+tensorflow
+numpy
+pillow
 gdown
