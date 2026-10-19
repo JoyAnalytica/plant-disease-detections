@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LeafCare AI | Plant Disease Detection</title>
+    <meta name="description" content="Detect plant leaf diseases with AI and discover helpful plant care guidance.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">✿</span>
+            <span>LeafCare<span class="brand-ai"> AI</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#detect">Disease Detection</a>
+            <a href="#about">How it works</a>
+        </nav>
+
+        <a class="nav-cta" href="#detect">Analyze a Leaf <span>↗</span></a>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    AI-POWERED PLANT HEALTH
+                </div>
+
+                <h1>A healthier plant<br>starts with <span>one leaf.</span></h1>
+
+                <p class="hero-description">
+                    Spot potential leaf diseases with AI. Upload a photo to
+                    discover a prediction, understand possible symptoms, and
+                    explore practical plant-care guidance.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#detect" class="primary-button">
+                        Analyze Your Plant <span>→</span>
+                    </a>
+                    <a href="#about" class="text-button">How it works ↓</a>
+                </div>
+
+                <div class="trust-row">
+                    <div class="trust-item">
+                        <span class="trust-icon">✓</span>
+                        <span>Quick AI analysis</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">✿</span>
+                        <span>Plant-care guidance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-orb orb-one"></div>
+                <div class="hero-orb orb-two"></div>
+
+                <div class="hero-photo-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=85"
+                        alt="Healthy green plants"
+                    >
+                    <div class="photo-caption">
+                        <div class="photo-caption-icon">✿</div>
+                        <div>
+                            <strong>Every leaf tells a story.</strong>
+                            <span>Let's help you read it.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating-card floating-top">
+                    <span class="floating-check">✓</span>
+                    <div>
+                        <strong>Smart detection</strong>
+                        <small>Powered by CNN</small>
+                    </div>
+                </div>
+
+                <div class="floating-card floating-bottom">
+                    <span class="leaf-mini">🌱</span>
+                    <div>
+                        <strong>Grow with confidence</strong>
+                        <small>Care starts with awareness</small>
+                    </div>
+                </div>
+
+                <div class="decorative-leaf">✿</div>
+            </div>
+        </section>
+
+        <section class="stats-strip">
+            <div class="stat-item">
+                <span class="stat-number">01</span>
+                <div>
+                    <strong>Upload</strong>
+                    <span>Choose a leaf photo</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">02</span>
+                <div>
+                    <strong>Analyze</strong>
+                    <span>Let your CNN model work</span>
+                </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">03</span>
+                <div>
+                    <strong>Take action</strong>
+                    <span>Explore plant-care tips</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="detector-section" id="detect">
+            <div class="section-heading">
+                <div class="eyebrow centered-eyebrow">
+                    <span class="status-dot"></span>
+                    YOUR PLANT HEALTH CHECK
+                </div>
+
+                <h2>Let's take a closer look.</h2>
+                <p>Upload a clear photo of a single plant leaf to get started.</p>
+            </div>
+
+            <div class="detector-grid">
+                <div class="upload-panel panel">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="step-label">STEP 01</span>
+                            <h3>Upload leaf image</h3>
+                        </div>
+                        <span class="panel-icon">↥</span>
+                    </div>
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/jpeg,image/png,image/webp"
+                        hidden
+                    >
+
+                    <div class="upload-zone" id="dropZone" tabindex="0" role="button" aria-label="Choose or drop a leaf image">
+                        <div class="upload-content" id="uploadContent">
+                            <div class="upload-icon">
+                                <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                                    <rect x="5" y="8" width="38" height="32" rx="8" stroke="currentColor" stroke-width="1.8"/>
+                                    <circle cx="17" cy="19" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+                                    <path d="M7 34L18 24L25 30L31 24L41 34" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <h4>Drop your leaf photo here</h4>
+                            <p>or click below to browse your device</p>
+                            <button type="button" id="chooseButton" class="browse-button">
+                                Choose an image
+                            </button>
+                            <span class="file-hint">JPG, PNG or WEBP · Max 10 MB</span>
+                        </div>
+
+                        <div class="preview-content" id="previewContent" hidden>
+                            <img id="imagePreview" src="" alt="Selected leaf preview">
+                            <div class="preview-overlay">
+                                <span id="fileName">leaf-photo.jpg</span>
+                                <button type="button" id="changeImageButton">Change image</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upload-note">
+                        <span>ⓘ</span>
+                        <p>For better results, use a clear, well-lit photo with the leaf in focus.</p>
+                    </div>
+
+                    <button type="button" id="analyzeButton" class="analyze-button" disabled>
+                        <span id="analyzeButtonText">Analyze leaf with AI</span>
+                        <span id="buttonArrow">→</span>
+                    </button>
+
+                    <p class="error-message" id="errorMessage" role="alert" hidden></p>
+
+                    <div class="privacy-note">
+                        <span>♧</span> Your image is sent to the prediction API for analysis.
+                    </div>
+                </div>
+
+                <div class="result-panel panel" id="resultPanel">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="step-label">STEP 02</span>
+                            <h3>Analysis results</h3>
+                        </div>
+                        <span class="live-badge"><span></span> AI RESULTS</span>
+                    </div>
+
+                    <div id="emptyState" class="empty-state">
+                        <div class="empty-illustration">
+                            <div class="illustration-circle">
+                                <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                                    <path d="M49 81V49" stroke="#247847" stroke-width="3.5" stroke-linecap="round"/>
+                                    <path d="M49 61C29 60 18 48 20 29C40 29 52 41 49 61Z" fill="#B6E0C0" stroke="#247847" stroke-width="2"/>
+                                    <path d="M50 51C49 32 62 18 82 19C83 39 69 51 50 51Z" fill="#72C68C" stroke="#247847" stroke-width="2"/>
+                                    <path d="M50 81H34" stroke="#247847" stroke-width="3.5" stroke-linecap="round"/>
+                                    <path d="M28 82H72" stroke="#247847" stroke-width="3.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <span class="sparkle sparkle-one">✦</span>
+                            <span class="sparkle sparkle-two">✧</span>
+                        </div>
+
+                        <h4>Your results will grow here.</h4>
+                        <p>Upload a leaf image and run the analysis to see your model's prediction, confidence score and plant-care guidance.</p>
+
+                        <div class="empty-tags">
+                            <span>🌿 Healthy</span>
+                            <span>🔎 Powdery</span>
+                            <span>🍂 Rust</span>
+                        </div>
+                    </div>
+
+                    <div id="resultsContent" hidden>
+                        <div class="result-summary">
+                            <div class="result-status-icon" id="resultStatusIcon">✓</div>
+                            <div class="result-summary-text">
+                                <span class="result-overline">PREDICTED CLASS</span>
+                                <h4 id="predictedClass">Healthy</h4>
+                                <p id="predictedNameBn">সুস্থ পাতা</p>
+                            </div>
+                            <div class="confidence-block">
+                                <strong id="confidenceValue">0%</strong>
+                                <span>Confidence*</span>
+                            </div>
+                        </div>
+
+                        <div class="confidence-track">
+                            <div id="confidenceBar" class="confidence-fill"></div>
+                        </div>
+
+                        <p class="result-status" id="resultStatusBn"></p>
+
+                        <div class="probability-section">
+                            <h4>Class probabilities</h4>
+                            <div id="probabilityList"></div>
+                        </div>
+
+                        <div class="result-detail">
+                            <div class="detail-heading">
+                                <span class="detail-icon">⌕</span>
+                                <h4>Possible symptoms</h4>
+                            </div>
+                            <p id="symptomsBn"></p>
+                            <p class="english-detail" id="symptomsEn"></p>
+                        </div>
+
+                        <div class="result-detail treatment-detail">
+                            <div class="detail-heading">
+                                <span class="detail-icon">✿</span>
+                                <h4>Recommended care</h4>
+                            </div>
+                            <ul id="treatmentBn"></ul>
+                            <details class="english-details">
+                                <summary>Read care tips in English</summary>
+                                <ul id="treatmentEn"></ul>
+                            </details>
+                        </div>
+
+                        <p class="disclaimer">
+                            *Confidence is the model's score, not a guarantee of diagnostic accuracy.
+                            Results depend on image quality and training data.
+                        </p>
+
+                        <button type="button" id="resetButton" class="reset-button">
+                            ↻ Analyze another leaf
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-section" id="about">
+            <div class="section-heading">
+                <div class="eyebrow centered-eyebrow">
+                    <span class="status-dot"></span>
+                    SIMPLE BY DESIGN
+                </div>
+                <h2>From photo to plant care.</h2>
+                <p>Three simple steps to understand what your leaf may be telling you.</p>
+            </div>
+
+            <div class="how-grid">
+                <article class="how-card">
+                    <div class="how-icon icon-light">↥</div>
+                    <span class="how-number">01 / UPLOAD</span>
+                    <h3>Share a photo</h3>
+                    <p>Choose a clear image of a leaf you want to check.</p>
+                </article>
+
+                <article class="how-card">
+                    <div class="how-icon icon-green">⌕</div>
+                    <span class="how-number">02 / DETECT</span>
+                    <h3>AI analyzes</h3>
+                    <p>Your trained CNN model predicts one of its three classes.</p>
+                </article>
+
+                <article class="how-card">
+                    <div class="how-icon icon-yellow">✿</div>
+                    <span class="how-number">03 / CARE</span>
+                    <h3>Learn what to do</h3>
+                    <p>Review possible symptoms and practical care suggestions.</p>
+                </article>
+            </div>
+
+            <div class="about-note">
+                <span class="about-note-icon">🌱</span>
+                <div>
+                    <strong>A helpful starting point, not a final diagnosis.</strong>
+                    <p>LeafCare AI currently recognizes Healthy, Powdery and Rust classes. Confirm serious or uncertain plant problems with a local agricultural expert.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-cta">
+            <div class="bottom-cta-content">
+                <span class="bottom-leaf">✿</span>
+                <h2>Give your plants a little more care.</h2>
+                <p>One clear photo can be the first step toward healthier leaves.</p>
+                <a href="#detect" class="bottom-button">Start a leaf check <span>→</span></a>
+            </div>
+            <div class="cta-decoration cta-decoration-one"></div>
+            <div class="cta-decoration cta-decoration-two"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#" class="brand footer-brand">
+            <span class="brand-icon">✿</span>
+            <span>LeafCare<span class="brand-ai"> AI</span></span>
+        </a>
+        <p>Built with care and machine learning.</p>
+        <span class="footer-copyright">© 2026 LeafCare AI</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
